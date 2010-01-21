@@ -1,0 +1,38 @@
+<?php
+require 'musicthoughts-init.php';
+
+if(!isset($server['params'][0]))
+	{
+	$qv['contributors'] = Contributor::tops();
+	$qv['pagetitle'] = sprintf(TOP_S, CONTRIBUTORS);
+	$qq->show('head');
+	$qv['header'] = $qv['pagetitle'];
+	$qq->show('h2-header');
+	$qq->show('contributors');
+	$qq->show('foot');
+	}
+else
+	{
+	if(ctype_digit($server['params'][0]))
+		{
+		$c = Contributor::fetch($server['params'][0]);
+		}
+	else
+		{
+		$contributor = urldecode($server['params'][0]);
+		$c = Contributor::search($contributor);
+		}
+	if($c === false)
+		{
+		$qq->redirect('contributor');
+		}
+	$qv['thoughts'] = $c->thoughts(LANG);
+	$qv['pagetitle'] = MUSICTHOUGHTS . ' - ' . sprintf(CONTRIBUTED_BY_S, $c->name());
+	$qq->show('head');
+	$qv['header'] = sprintf(CONTRIBUTED_BY_S, $c->name());
+	$qq->show('h2-header');
+	$qq->show('thoughts');
+	$qq->show('foot');
+	}
+
+?>

@@ -1,0 +1,29 @@
+<?php
+require 'musicthoughts-init.php';
+
+if(isset($server['params'][0]) && ctype_digit($server['params'][0]))
+	{
+	$c = Category::fetch($server['params'][0]);
+	}
+
+# doing it like this in case $c returned false, still show list of cats
+if(!isset($c) || $c == false)
+	{
+	$qv['catlist'] = Category::all_howmany();
+	$qv['pagetitle'] = CATEGORIES;
+	$qq->show('head');
+	$qq->show('catlist');
+	$qq->show('foot');
+	}
+else
+	{
+	$qv['thoughts'] = $c->thoughts(LANG);
+	$qv['pagetitle'] = $c->name();
+	$qq->show('head');
+	$qv['header'] = $c->name();
+	$qq->show('h2-header');
+	$qq->show('thoughts');
+	$qq->show('foot');
+	}
+
+?>

@@ -1,0 +1,13 @@
+<?php
+require 'musicthoughts-init.php';
+if(isset($_POST['css']) && in_array($_POST['css'], $style_whitelist))
+	{
+	setcookie('css', $_POST['css'], time() + 36000, '/');
+	$qq->redirect('');
+	}
+$qv['pagetitle'] = 'MusicThoughts';
+$qq->show('head');
+$qv['style_whitelist'] = $style_whitelist;
+$qq->show('styles');
+$qq->show('foot');
+?>

@@ -1,0 +1,42 @@
+<?php
+require 'musicthoughts-init.php';
+
+$qv['pagetitle'] = SEARCH;
+if(isset($_GET['q']) && strlen($_GET['q']) > 1)
+	{
+	# if matches category name, jump to category page
+	$q = trim($_GET['q']);
+	$c = Category::search($q);
+	if($c !== false)
+		{
+		$qq->redirect('cat/' . $c->id);
+		}
+	$results = Thought::search($q, LANG);
+	if(count($results))
+		{
+		$qv['pagetitle'] = htmlspecialchars($q);
+		}
+	}
+
+$qq->show('head');
+$qq->show('searchbox');
+
+if(isset($results) && count($results) > 0)
+	{
+	$qv['highlight'] = $q;
+	foreach($results as $header => $thoughts)
+		{
+		$qv['header'] = constant($header);
+		$qq->show('h2-header');
+		$qv['thoughts'] = $thoughts;
+		$qq->show('thoughts');
+		}
+	}
+elseif(isset($results))
+	{
+	$qv['header'] = NONE_FOUND_TRY_AGAIN;
+	$qq->show('h2-header');
+	}
+
+$qq->show('foot');
+?>

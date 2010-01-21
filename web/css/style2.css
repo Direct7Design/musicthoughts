@@ -1,0 +1,51 @@
+html, body {
+	background: #fff;
+	color: #000;
+	font-family: Georgia, serif;
+}
+ul, fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#footer, cite, address {
+	font-family: Verdana, sans-serif;
+}
+#footer {
+	font-size: 0.66em;
+	margin-top: 2em;
+	color: #777;
+}
+#langlinks form {
+	display: inline;
+}
+#navigation li {
+	display: inline;
+	list-style-type: none;
+	margin: 0 0.5em;
+	padding: 0;
+}
+div.langlink {
+	display: inline;
+	margin: 0 0.5em;
+}
+#header h1 {
+	font-size: 1.1em;
+	float: left;
+}
+hr, #content {
+	clear: both;
+}
+cite {
+	margin-left: 2em;
+}
+address {
+	margin-left: 3em;
+	font-size: 0.8em;
+}
+div#mainthought {
+	border: 2px solid #000;
+	width: 50%;
+	margin: 0 auto;
+	padding: 2em;
+}

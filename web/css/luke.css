@@ -1,0 +1,340 @@
+/* @override http://musicthoughts.com/css/luke.css */
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	background: #fff;
+	color: #000;
+	text-align: center;
+}
+body, textarea {
+	font-family: Optima, "Trebuchet MS", "Lucida Sans Unicode", Tahoma, sans-serif;
+}
+#content {
+	width: 600px;
+	margin: 0 auto;
+	text-align: left;
+}
+div[dir="rtl"], ul[dir="rtl"], p[dir="rtl"], cite[dir="rtl"] {
+	direction: rtl;
+	text-align: right;
+}
+#langlinks form, #navigation li, div.langlink {
+	display: inline;
+	list-style-type: none;
+	padding: 0;
+}
+#navigation li {
+	margin: 0 1em;
+}
+#langlinks input {
+	margin-right: 10px;
+	border: 0;
+}
+hr, #content {
+	clear: both;
+}
+hr {
+	border: 1px dotted #eee;
+	margin: 2em 0;
+}
+h1 a, ul.thoughts li p a  {
+	color: #000;
+	text-decoration: none;
+}
+h2 {
+	margin: 1em 0;
+}
+body#home h3 {
+	width: 390px;
+}
+div#catlist {
+	width: 190px;
+	float: right;
+}
+div#catlist ul {
+	list-style-type: none;
+}
+ul.thoughts li {
+	margin-bottom: 3em;
+}
+.highlight {
+	background-color: #666;
+}
+.small, div#footer, div.sublabel, div#langlinks {
+	font-size: 0.75em;
+}
+input, textarea {
+	padding: 1px;
+	font-size: 12px;
+	margin-right: 1em;
+}
+form table label{
+	color: #fff;
+	font-size: 12px;
+	padding-left: 5px;
+	font-weight: normal;
+} 
+fieldset{
+	border: none;
+}
+label {
+	margin-top: 1.5em;
+	font-weight: bold;
+	display: block;
+}
+#catboxes label {
+	display: inline;
+	font-weight: normal;
+	margin: 0 0 0 -1em;
+}
+div.sublabel {
+	display: block;
+}
+/* general layout */
+html {
+	background: #5ecdb4;
+}
+body {
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+#container {
+	width: 700px !important;
+	margin: 0 auto;
+}
+h4 {
+	color: #8d2d2e;
+	font-weight: normal;
+	font-size: 18px;
+	text-transform: capitalize;
+}
+h2 {
+	font-weight: normal;
+	font-size: 18px;
+	color: #006270;
+}
+#content form {
+	padding-bottom: 15px;
+}
+form h2 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+hr {
+	display: none;
+}
+small {
+	font-size: 11px;
+	color: #fff;
+}
+label {
+	font-weight: normal;
+	font-size: 14px;
+	color: #8d2d2e;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+	
+}
+a:hover {
+	background: none !important;
+}
+
+#header {
+	background: url(/css/luke/nav-book.gif) no-repeat right !important;
+}
+.langlink input:hover {
+	border: none !important;
+}
+
+/* navigation */
+#navigation {
+	margin: 67px 0 0 0;
+	overflow: hidden;
+}
+	#navigation ul {
+		float: right;
+		margin: 10px;
+	}
+		#navigation ul li {
+			color: #fff;
+			margin: 0;
+			font-size: 10px;
+		}
+		#navigation ul li:after {
+			content: "|";
+		}
+			#navigation ul li a { 
+				color: #fff;
+				text-decoration: none;
+				padding: 0 10px;
+				font-size: 14px;
+			}
+h1 a {
+	background: url(/css/luke/logo.gif) no-repeat;
+	display: block;
+	height: 34px;
+	width: 231px;
+	text-indent: -9999px;
+	float: left;
+}
+h1 a:hover {
+	display: block;
+	background: transparent url(/css/luke/logo.gif) no-repeat !important;
+}
+
+/* home page */
+body#home #content {
+	background: url(/css/luke/back-home.jpg) no-repeat;
+	overflow: hidden;
+	width: 700px;
+	margin: 15px 0 0 0;
+	position: relative;
+	height: 600px;
+}
+	body#home #catlist {
+		position: absolute;
+		top: 250px;
+		left: 400px;
+		background: url(/css/luke/image-bookstack.gif) no-repeat bottom right;
+	}
+	h3 {
+		position: absolute;
+		font-weight: normal;
+		width: 210px !important;
+		margin-left: 400px;
+	}
+	body#home h3#headread {
+		margin-top: 55px !important;
+		float: left;
+		line-height: 60%;
+	}
+	body#home h3#headadd {
+		margin-top: 85px !important;
+		line-height: 60%;
+	}
+	body#home h3#headauthors {
+		margin-top: 115px !important;
+		line-height: 60%;
+	}
+	body#home h3#headcontributors {
+		margin-top: 145px !important;
+		line-height: 60%;
+	}
+	body#home h3#heademail {
+		margin-top: 175px !important;
+		line-height: 60%;
+	}
+		body#home h3#headread a, body#home h3#headadd a, body#home h3#headauthors a, body#home h3#headcontributors a, body#home h3#heademail a{
+			font-size: 16px;
+		}
+	
+		h3 a {
+			color: #006270;
+			text-decoration: none;
+			font-size: 18px;
+		}
+		
+/* sub pages */
+#content {
+	width: 590px;
+	margin: 25px 0 0 0px;
+	background: url(/css/luke/mainthought-book.gif) no-repeat top left;
+	overflow: hidden;
+}
+body#t #content {
+	width: 710px;
+	margin: 25px 0 0 0px;
+	background: url(/css/luke/mainthought-book.gif) no-repeat top left;
+	overflow: hidden;
+}
+	#mainthought {
+		width: 505px;
+		margin: 35px 15px 35px 0;
+		float: left;
+		padding-bottom: 75px;
+		background: url(/css/luke/mainthought2-book.gif) no-repeat bottom right;
+	}
+		h2.thought {
+			margin: 10px 0 20px 100px;
+			color: #fff;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 150%;
+		}
+
+	#catlist {
+		float: right;
+		margin: 55px 0;
+		background: url(/css/luke/image-bookstack.gif) no-repeat bottom right;
+		min-height: 100px;
+	}
+	address, cite {
+		color: #fff;
+		font-style: normal;
+		font-size: 12px;
+		margin: 10px 0 0 100px;
+		display: block;
+	}
+	cite {
+		margin-top: 35px !important;
+	}
+		address a, cite a {
+			color: #006270;
+		}
+
+
+body#add #content, body#search #content, body#author #content, body#contributor #content, body#cat #content  {
+	padding-left: 110px;
+}
+	body#add #content p {
+		color: #fff;
+		font-size: 12px;
+}
+
+ul.authors, ul.contributors {
+	width: 600px;
+	overflow: hidden;
+}
+	ul.authors li, ul.contributors li {
+		float: left;
+		width: 250px;
+		list-style: none;
+		display: block;
+		margin: 0 10px 0px 0;
+	}
+		ul.authors li a, ul.contributors li a {	
+			padding: 15px;
+			color: #8d2d2e;
+			width: 150px !important;
+			float: left;
+		}
+		ul.authors li small, ul.contributors li small {
+			float: left;
+			margin-top: 15px;
+		}
+ul.thoughts li{
+	list-style-type: none;
+}		
+	ul.thoughts li p a{
+		color: #fff;
+	}
+	ul.thoughts li cite{
+		margin: 10px 0 0 15px !important;
+	}
+
+
+/* footer */
+#footer {
+	margin: 45px 0;
+	color: #fff;
+	line-height: 180%;
+}
+	#footer a {
+		color: #006270;
+	}
+
+

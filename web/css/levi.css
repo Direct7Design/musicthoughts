@@ -1,0 +1,494 @@
+*   {
+	margin:0pt;
+	padding:0pt;
+}
+
+img {
+	border:none;
+}
+
+html	{
+	background:#f7f7ef;
+}
+
+body	{
+	color:#201a11;
+	font: normal 62.5% "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+	background:#f7f7ef url('/css/levi/background.png') repeat-x top left;
+}
+
+a   {
+	color:#201a11;
+	text-decoration:none;
+}
+
+ul, li  {
+	list-style-type:none;
+}
+
+hr	{
+	display: none;
+}
+
+div#container   {
+	width:820px;
+	padding:0pt 20px;
+	margin:0pt auto;
+	text-align:center;
+}
+
+div#header	{
+	height: 180px;
+	margin-bottom:20px;
+}
+
+/* @group Language Links */
+
+div#langlinks   {
+	width: 820px;
+	padding-top:20px;
+}
+
+	div#langlinks div.langlink  {
+		float:left;
+		padding-right:38px;
+	}
+	
+	div#langlinks div#langlink-zh	{
+		padding-right:0pt;
+	}
+
+/* @end */
+
+/* @group Navigation */
+
+div#navigation  {
+}
+	
+	div#navigation h1	{
+		float: left;
+		padding: 5px 0pt 10px 0pt;
+		margin-top:13px;
+	}
+
+	div#navigation h1 a {
+		font-size:48px;
+		display:block;
+		color: #f7f7ef;
+		text-shadow: #201a11 0pt 1px 0pt;
+		line-height:1em;
+	}
+	
+	div#navigation h1 a:hover	{
+		color: #d96729;
+	}
+	
+	div#navigation ul   {
+		clear:left;
+		float: left;
+		width:820px;
+		margin-top:16px;
+	}
+	
+	div#navigation ul li	{
+		float:left;
+		margin-right: 40px;
+	}
+	
+	div#navigation ul li a  {
+		display:block;
+		font-size:1.4em;
+		line-height:1em;
+		color: #f7f7ef;
+		padding:17px 0pt 19px 0pt;
+		text-shadow: #201a11 0pt 1px 0pt;
+	}
+	
+	div#navigation ul li a:hover	{
+		color:#d96729;
+		background:url('/css/levi/nav-bg.png') no-repeat bottom center;
+	}
+
+/* @end */
+	
+div#content {
+	width:820px;
+	clear:both;
+	float:left;
+	padding: 0pt 0pt 20px 0pt;
+}
+
+body#add div#content	{
+	border-top:none;
+	padding-top:0pt;
+}
+
+	h2	{
+		color: #201a11;
+		font-size:1.8em;
+		letter-spacing: 3px;
+		border-bottom:1px solid #201a11;
+		padding: 20px 10px 20px 10px;
+		font-weight: normal;
+		margin-bottom:20px;
+		border-top:2px solid #201a11;
+	}
+
+/* @group Main Thought Bubble */
+
+div#mainthought	{
+		width: 600px;
+		float: left;
+		text-align: left;
+	}
+	
+		div#mainthought h2.thought	{
+			padding: 15px 30px 40px 30px;
+			background:#d3cabb url('/css/levi/quote-background.png') no-repeat bottom left;
+			color: #322d25;
+			font-size: 2.4em;
+			font-weight: normal;
+			line-height: 1.4em;
+			letter-spacing: 0;
+			border:none;
+		}
+		
+		div#mainthought cite	{
+			font-size:1.2em;
+			margin-left: 50px;
+  			font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+			font-weight: 100;	
+			font-style: normal;
+  			letter-spacing: 1px;
+		}
+		
+		div#mainthought cite a	{
+			border-bottom:1px solid #c4c2ba;
+		}
+				
+		div#mainthought address	{
+			font-size:1.2em;
+			margin:5px 0pt 0pt 65px;
+			color:#6b675e;
+		}
+		
+		div#mainthought address a	{
+			color:#6b675e;
+			border-bottom:1px solid #c4c2ba;
+		}
+		
+		div#mainthought cite a:hover,
+		div#mainthought address a:hover,
+		body#add h4 a:hover,
+		ul.thoughts li cite a:hover	{
+			color: #d96729;
+			border-bottom-color: #d96729;
+		}
+
+/* @end */
+
+/* @group Thoughts List */
+
+ul.thoughts	{
+		text-align:left;
+	}
+	
+		ul.thoughts li	{
+			width:390px;
+			padding:0pt 10px;
+			float:left;
+			margin-bottom:20px
+		}
+		
+		ul.thoughts li p a	{
+			padding: 15px 30px 40px 30px;
+			background:#d3cabb url('/css/levi/quote-background.png') no-repeat bottom left;
+			color: #322d25;
+			font-size: 1.6em;
+			font-weight: normal;
+			display:block;
+			line-height:1.4em;
+		}
+		
+		ul.thoughts li p a:hover	{
+			color:#d3cabb;
+			background:#322d25 url('/css/levi/quote-background-hover.png') no-repeat bottom left;
+		}
+		
+		ul.thoughts li cite	{
+			margin-left: 50px;
+  			font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+  			font-size:1.2em;
+			font-weight: 100;	
+			font-style: normal;
+  			letter-spacing: 1px;
+		}
+		
+		ul.thoughts li cite a	{
+			border-bottom:1px solid #c4c2ba;
+		}
+
+/* @end */
+
+/* @group Category List */
+
+div#catlist {
+		float:right;
+		text-align: left;
+		width: 200px;
+		margin-left: 20px;
+	}
+	
+		div#catlist h4	{
+			color: #201a11;
+			font-size: 1.4em;
+			letter-spacing: 2px;
+			border-top:2px solid #201a11;
+			border-bottom:1px solid #201a11;
+			padding:18px 10px 20px;
+			font-weight: bold;
+		}
+		
+		div#catlist ul li a	{
+			font-size: 1.4em;
+			color: #201a11;
+			line-height:1em;
+			width:180px;
+			display:block;
+			padding: 10px 10px 13px 10px;
+			border-bottom:1px solid #c4c2ba;
+		}
+		
+		div#catlist ul li a:hover	{
+			color: #d96729;
+		}
+
+/* @end */
+
+/* @group Contributors & Authors List */
+
+
+ul.contributors, ul.authors	{
+		text-align:center;
+}
+	
+		ul.contributors li, ul.authors li	{
+			width:380px;
+			margin:0pt 10px 20px 10px;
+			float:left;
+			padding: 20px 0pt 18px 0pt;
+			background:#d3cabb;
+			color: #322d25;
+			font-size: 1.8em;
+			line-height:1.4em;
+		}
+
+		ul.contributors li a, ul.authors li a	{
+			font-weight: bold;
+		}
+		
+		ul.contributors li a:hover, ul.authors li a:hover	{
+			color:#d96729;
+		}
+
+
+/* @end */
+
+/* @group Main Links */
+
+div#content h3  {
+		width: 600px;
+		text-align: left;
+		float: left;
+		margin-bottom:20px;
+	}
+	
+		div#content h3 a  {
+			-webkit-border-radius:5px;
+			font-size: 24px;
+			padding: 18px 20px 17px 60px;
+			display: block;
+			width: 520px;
+			background:url('/css/levi/button.png') no-repeat 0 0;
+			border:none;
+		}
+		
+		div#content h3#headread a	{
+			background:url('/css/levi/quote-button.png') no-repeat 0 0;
+		}
+		
+		div#content h3#headadd a	{
+			background:url('/css/levi/add-button.png') no-repeat 0 0;
+		}
+		
+		div#content h3#headadd a:hover	{
+			background-position:0 -65px;
+		}
+		
+		div#content h3#headauthors a	{
+			background:url('/css/levi/author-button.png') no-repeat 0 0;
+		}
+		
+		div#content h3#headcontributors a	{
+			background:url('/css/levi/contributors-button.png') no-repeat 0 0;
+		}
+
+		div#content h3#heademail a	{
+			background:url('/css/levi/email-button.png') no-repeat 0 0;
+		}
+		
+		div#content h3 a:hover, div#content h3#headread a:hover, div#content h3#headadd a:hover, div#content h3#headauthors a:hover, div#content h3#headcontributors a:hover, div#content h3#heademail a:hover	{
+			color: #d3cabb;
+			background-position:0 -65px;
+		}
+
+/* @end */
+
+/* @group Form Style */
+
+body#add p, body#add-thanks p {
+		font-size:1.4em;
+		font-weight:bold;
+		margin-bottom:20px;
+	}
+
+body#add fieldset	{
+		border:none;
+		text-align:left;
+		width:46em;
+		margin:0pt auto;
+	}
+	
+		body#add fieldset label	{
+			font-size:1.4em;		
+		}
+		
+		fieldset input, fieldset textarea {
+			padding:5px;
+			margin:10px 0pt 20px 0pt;
+			font-size:12px;
+			display:block;
+			font-weight:bold;
+			font-family: "Helvetica Neue", Helvetica, Arial, serif;
+			width:98%;
+			border:1px solid #b7b1a3;
+			-webkit-border-radius:3px;
+			-moz-border-radius:3px;
+			border-radius:3px;
+		}
+	
+		input#v {
+			width: 20%;
+		}	
+
+		fieldset table#catboxes	{
+			margin:10px 0pt;
+		}
+		
+		fieldset td	{
+			padding-bottom:10px;
+		}
+		
+		fieldset td label	{
+			padding: 0pt 20px 0pt 10px;
+			display: inline;
+		}
+		
+		fieldset td input	{
+			display:inline;
+			width:auto;
+			border:none;
+			margin:0;
+			padding:0;
+		}
+		
+		input:focus, textarea:focus	{
+			outline:0;
+		}
+		
+		fieldset input[type='hidden']	{
+			display:none;
+		}
+		
+		#searchsubmit, #addsubmit	{
+			width:auto;
+			font-size:1.4em;
+			display:block;
+			padding:5px 20px;
+			background-color:#201a11;
+			border:none;
+			color:#f7f7ef;
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			border-radius:5px;
+			font-family:"Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+		}
+		
+		#searchsubmit:hover, #addsubmit:hover	{
+			color: #d96729;
+		}
+
+/* @end */
+
+/* @group Search Field */
+
+	body#search form label, div#guidelines-intro p, div#guidelines-intro ul li, body#add h4 {
+		font-size:1.8em;	
+		text-align:left;
+		display:block;
+		margin-bottom:20px;	
+		font-weight:bold;
+	}
+	body#add h4 a {
+		text-decoration: underline;
+	}
+	div#guidelines-intro ul li {
+		margin-left: 2em;
+	}
+	
+	body#search form input#q {
+		padding:5px;
+		margin-bottom:10px;
+		font-size:14px;
+		display:block;
+		font-weight:bold;
+		font-family: "Helvetica Neue", Helvetica, Arial, serif;
+		width:648px;
+		margin-right:20px;
+		border:1px solid #b7b1a3;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		border-radius:3px;
+		float:left;
+	}
+	
+	#searchsubmit	{
+		width:130px;
+	}
+
+/* @end */
+
+
+
+/* @group Footer Style */
+
+div#footer  {
+	clear:both;
+	border-top:2px solid #201a11;
+	font-size:1.4em;
+	padding: 20px 0pt;
+	text-align: center;
+	color: #6b675e;
+}
+
+	div#footer a	{
+		border-bottom:1px solid #c4c2ba;
+		color: #6b675e;
+	}
+	
+	div#footer a:hover	{
+		color: #d96729;
+		border-bottom-color: #d96729;
+	}
+
+/* @end */

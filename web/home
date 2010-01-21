@@ -1,0 +1,10 @@
+<?php
+require 'musicthoughts-init.php';
+
+$qv['pagetitle'] = 'MusicThoughts';
+$qv['catlist'] = Category::all_howmany();
+
+$qq->show('head');
+$qq->show('home');
+$qq->show('foot');
+?>

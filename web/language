@@ -1,0 +1,15 @@
+<?php
+require 'musicthoughts-init.php';
+if(isset($_POST['language']) && isset($languages[$_POST['language']]))
+	{
+	setcookie('lang', $_POST['language'], time() + 2592000, '/');
+	}
+if(isset($_SERVER['HTTP_REFERER']))
+	{
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
+	}
+else
+	{
+	$qq->redirect('home');
+	}
+?>

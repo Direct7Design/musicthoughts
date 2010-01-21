@@ -1,0 +1,9 @@
+<?php
+require 'musicthoughts-init.php';
+
+$qv['pagetitle'] = 'MusicThoughts';
+
+$qq->show('head');
+$qq->show('guidelines');
+$qq->show('foot');
+?>

@@ -1,0 +1,633 @@
+/* @override http://musicthoughts.com/css/47.css */
+
+/* By Jonathan Longnecker from FortySeven Media */
+
+/* @group Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* @end */
+
+html {
+	background: url(/css/47/bkg.jpg) 0 center;
+}
+
+html[dir="ltr"] {
+	text-align: left;
+}
+
+html[dir="rtl"] {
+	text-align: right;
+}
+
+body {
+	background: url(/css/47/shadow_top.png) repeat-x;
+	color: #482415;
+	font: 18px/24px Georgia, "Times New Roman", Times, serif;
+}
+
+#header {
+	background: url(/css/47/header.png) no-repeat left top;
+	height: 355px;
+}
+
+#container {
+	background: url(/css/47/container_bkg.png) repeat-y center top;
+	width: 1096px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content {
+	position: relative;
+	top: -150px;
+	float: left;
+	width: 660px;
+	padding-right: 30px;
+	padding-left: 110px;
+	margin-bottom: -150px;
+	padding-bottom: 80px;
+}
+
+/* @group Header */
+
+#langlinks {
+	width: 900px;
+	margin-left: 110px;
+	padding-top: 7px;
+	float: left;
+	display: inline;
+	text-align: left;
+}
+
+.langlink {
+	float: left;
+	width: 90px;
+}
+
+#langlink-pt,
+#langlink-ru {
+	width: 110px;
+}
+
+#langlink-zh {
+	width: 50px;
+}
+
+#navigation {
+	float: left;
+	display: inline;
+	width: 610px;
+	margin-left: 130px;
+	font-size: 17px;
+}
+
+html[dir="rtl"] #navigation {
+	float: right;
+	display: inline;
+	margin-left: 0px;
+	margin-right: 360px;
+}
+
+#navigation h1 {
+	text-transform: lowercase;
+	font: italic bold 39px/46px Georgia, "Times New Roman", Times, serif;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+
+#navigation h1 a {
+	color: #b6a37f;
+	text-decoration: none;
+	text-shadow: #422410 2px 2px 2px;
+}
+
+#navigation h1 a:hover {
+	color: #c5763d;
+}
+
+html[dir="rtl"] #navigation ul {
+	width: 610px;
+}
+
+html[dir="rtl"] #navigation ul,
+html[dir="rtl"] #navigation li {
+	float: right;
+}
+
+#navigation li {
+	display: inline;
+}
+
+#navigation li a {
+	float: left;
+	color: #a18a59;
+	padding: 10px;
+	line-height: 38px;
+	text-decoration: none;
+	text-shadow: #201106 1px 1px 1px;
+	font-size: 17px;
+}
+
+#navigation li a:hover {
+	color: #bdb18a;
+	text-decoration: underline;
+}
+
+#navigation li a.current,
+#navigation li a.current:hover {
+	background: url(/css/47/nav_current.png) no-repeat center center;
+	color: #bdb18a;
+}
+
+/* @end */
+
+/* @group Typography */
+
+a {
+	color: #482415;
+}
+
+h2 {
+	color: #b6a37f;
+	font-weight: bold;
+	font-style: italic;
+	text-transform: lowercase;
+	text-align: center;
+	background: url(/css/47/h2.png) no-repeat center bottom;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+p {
+	color: #6b5b46;
+	margin-bottom: 20px;
+}
+
+#add #content  ul {
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+#add #content[dir="rtl"] ul {
+	margin-right: 20px;
+	margin-left: 0px;
+}
+
+#add #content li {
+	background: url(/css/47/bullet.png) no-repeat left 10px;
+	padding-left: 25px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+#add #content[dir="rtl"] li {
+	background-position: right;
+	padding-left: 0;
+	padding-right: 25px;
+}
+
+
+hr {
+	display: none;
+}
+
+/* @end */
+
+/* @group Catlist */
+
+#catlist {
+	float: right;
+	width: 180px;
+	margin-top: -40px;
+	position: absolute;
+	right: -200px;
+	top: 135px;
+}
+
+#home #catlist {
+	position: relative;
+	right: 0px;
+	top: 0px;
+	margin-right: -230px;
+	margin-top: 100px;
+}
+
+#home #catlist {
+	*left: 50px; /* Make IE7 behave */
+}
+
+
+
+#catlist h4 {
+	color: #391c10;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 4px;
+}
+
+#catlist ul {
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+#catlist li {
+	color: #deb641;
+	font-size: 16px;
+	line-height: 20px;
+	width: 180px;
+	background: url(/css/47/cat_divider.png) no-repeat left bottom;
+	padding-top: 10px;
+	padding-bottom: 12px;
+}
+
+#catlist li a {
+	color: #deb641;
+	text-decoration: none;
+	padding: 10px 10px 10px 0;
+}
+
+#catlist li a:hover {
+	color: #fff;
+}
+
+/* @end */
+
+/* @group Home */
+
+#home h3 {
+	margin-bottom: 20px;
+	float: left;
+	width: 660px;
+}
+
+div#content h3 a {
+	background: url(/css/47/home_actions_bkg.png) no-repeat 0 top;
+	width: 576px;
+	height: 81px;
+	display: block;
+	line-height: 81px;
+	padding-left: 90px;
+	color: #4d3930;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 28px;
+}
+
+div#content[dir="rtl"] h3 a {
+	padding-left: 0px;
+	padding-right: 100px;
+	width: 566px;
+}
+
+#home h3 a:hover {
+	background-position: 0 -81px;
+	color: #fff;
+}
+
+
+div#content h3#headread  {
+	background: url(/css/47/home_read.png) no-repeat 20px 15px;
+}
+
+#home h3#headadd  {
+	background: url(/css/47/home_add.png) no-repeat 5px 15px;
+}
+
+#home h3#headauthors  {
+	background: url(/css/47/home_topauthor.png) no-repeat 20px 0;
+}
+
+#home h3#headcontributors  {
+	background: url(/css/47/home_topcontrib.png) no-repeat 10px 10px;
+}
+
+#home h3#heademail  {
+	background: url(/css/47/home_email.png) no-repeat 5px 20px;
+}
+
+div#content[dir="rtl"] h3#headread {
+	background-position: 580px;
+}
+
+div#content[dir="rtl"] h3#headadd {
+	background-position: 565px;
+}
+
+div#content[dir="rtl"] h3#headauthors {
+	background-position: 585px;
+}
+
+div#content[dir="rtl"] h3#headcontributors {
+	background-position: 580px;
+}
+
+div#content[dir="rtl"] h3#heademail {
+	background-position: 570px;
+}
+
+#home #content {
+	padding-bottom: 0px;
+}
+
+/* @end */
+
+/* @group MainThought */
+
+#mainthought {
+	background: url(/css/47/quote_large_top.png) no-repeat center top;
+	padding-top: 20px;
+	margin-top: 10px;
+}
+
+#mainthought h2 {
+	background: url(/css/47/quote_large_bottom.png) left bottom;
+	color: #482415;
+	font-weight: normal;
+	font-style: normal;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 40px;
+	font-size: 22px;
+	line-height: 28px;
+	text-align: left;
+	margin-top: 0px;
+	text-transform: none;
+}
+
+#content[dir="rtl"] #mainthought h2 {
+	text-align: right;
+}
+
+#mainthought h2 br {
+	margin-bottom: 0px;
+}
+
+#mainthought cite,
+#mainthought address {
+	color: #a08959;
+	font: normal 15px "Lucida Grande", Lucida, Verdana, sans-serif;
+	float: right;
+	clear: right;
+}
+
+#mainthought address {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	margin-top: 5px;
+}
+
+#mainthought cite a,
+#mainthought address a {
+	color: #a08959;
+	font-weight: normal;
+	font-style: normal;
+	border-bottom: 1px solid #d9cd9e;
+	text-decoration: none;
+	display: inline-block; 
+	vertical-align: bottom;
+}
+
+#mainthought address a {
+	font-style: italic;
+}
+
+#mainthought cite a:hover,
+#mainthought address a:hover {
+	color: #482415;
+	border-bottom: 1px solid #482415;
+	text-decoration: none;
+}
+
+/* @end */
+
+/* @group 2-Column */
+
+#content ul.thoughts li {
+	float: left;
+	width: 312px;
+	margin-bottom: 20px;
+	margin-left: 9px;
+	margin-right: 9px;
+	background: url(/css/47/quote_small_top.png) no-repeat left top;
+}
+
+ul.thoughts p {
+	background: url(/css/47/quote_small_bottom.png) left bottom;
+	float: left;
+	width: 272px;
+	margin-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 25px;
+	margin-bottom: 0px;
+}
+
+ul.thoughts p a {
+	color: #482415;
+	text-decoration: none;
+	display: block;
+}
+
+ul.thoughts p a:hover {
+	color: #fff;
+}
+
+ul.thoughts cite {
+	float: right;
+	margin-top: 5px;
+	color: #a08959;
+	font: normal 13px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+ul.thoughts cite a {
+	color: #a08959;
+	font-weight: normal;
+	font-style: normal;
+	border-bottom: 1px solid #d9cd9e;
+	text-decoration: none;
+	display: inline-block; 
+	vertical-align: bottom;
+}
+
+ul.thoughts cite a:hover {
+	color: #482415;
+	border-bottom: 1px solid #482415;
+}
+
+/* @end */
+
+/* @group Form Add Thought */
+
+#content label {
+	color: #6b5b46;
+	float: left;
+	clear: left;
+}
+
+#content[dir="rtl"] label {
+	float: right;
+	clear: right;
+}
+
+#content input, textarea {
+	border: 1px solid #c4b8a8;
+	background-color: #fff;
+	font: 18px Georgia, "Times New Roman", Times, serif;
+	padding: 5px;
+	color: #482415;
+	float: left;
+	clear: left;
+	margin-bottom: 10px;
+	width: 97%;
+}
+
+#content[dir="rtl"] input, textarea {
+	float: right;
+	text-align: right;
+	clear: right;
+}
+
+#content textarea {
+	width: 97%;
+}
+
+#content input#addsubmit,
+#content input#searchsubmit {
+	background-image: url(/css/47/submit.png);
+	background-color: transparent;
+	width: 149px;
+	padding: 0px;
+	text-align: center;
+	color: #fff;
+	text-shadow: #352d1f 1px 1px 2px;
+	border: none;
+	font: bold 19px/45px Georgia, "Times New Roman", Times, serif;
+	height: 45px;
+}
+
+#content input#addsubmit:hover,
+#content input#searchsubmit:hover {
+	color: #c5763d;
+}
+
+#search #content label {
+	color: #b6a37f;
+	font-weight: bold;
+	font-style: italic;
+	text-transform: lowercase;
+	text-align: center;
+	background: url(/css/47/h2.png) no-repeat center bottom;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 100%;
+}
+
+#search #content input#q {
+	width: 475px;
+	margin-right: 20px;
+	line-height: 30px;
+}
+
+#content input#searchsubmit {
+	float: left;
+	clear: none;
+}
+
+/* @end */
+
+/* @group Contributors & Authors */
+
+ul.contributors, ul.authors	{
+		text-align:center;
+}
+	
+ul.contributors li, ul.authors li	{
+	float: left;
+	width: 312px;
+	margin-bottom: 20px;
+	margin-left: 9px;
+	margin-right: 9px;
+	background: url(/css/47/quote_small_bottom.png) no-repeat left center;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+ul.contributors li a, ul.authors li a	{
+	font-weight: bold;
+	text-decoration: none;
+}
+		
+ul.contributors li a:hover, ul.authors li a:hover	{
+	color: #c5763d;
+}
+
+/* @end */
+
+/* @group Footer */
+
+#footer {
+	background: url(/css/47/footer.png) no-repeat;
+	height: 176px;
+	clear: both;
+	color: #c0b090;
+	font-size: 16px;
+	padding-left: 250px;
+	padding-right: 400px;
+	padding-top: 100px;
+}
+
+#footer a {
+	color: #a18a49;
+	text-decoration: underline;
+	font-style: italic;
+}
+
+#footer a:hover {
+	color: #fff;
+}
+
+/* @end */
+

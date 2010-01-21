@@ -1,0 +1,5 @@
+php/qq/guidelines.php & top of php/qq/add-form.php : GET TRANSLATED
+
+171 : change first learned to leaned
+
+

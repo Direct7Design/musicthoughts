@@ -1,0 +1,22 @@
+<?php
+require 'auth.php';
+require 'musicthoughts-init.php';
+$qv['css'] = 'plain';
+
+$thoughts = Thought::unapproved();
+if(count($thoughts) == 0)
+	{
+	$qv['pagetitle'] = 'NONE';
+	$qq->show('head-plain');
+	$qq->show('foot-plain');
+	die();
+	}
+else
+	{
+	$qv['thoughts'] = $thoughts;
+	$qv['pagetitle'] = 'UNAPPROVED THOUGHTS';
+	$qq->show('head-plain');
+	$qq->show('xl');
+	$qq->show('foot-plain');
+	}
+?>

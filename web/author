@@ -1,0 +1,42 @@
+<?php
+require 'musicthoughts-init.php';
+
+if(!isset($server['params'][0]))
+	{
+	$qv['authors'] = Author::tops();
+	$qv['pagetitle'] = sprintf(TOP_S, AUTHORS);
+	$qq->show('head');
+	$qv['header'] = $qv['pagetitle'];
+	$qq->show('h2-header');
+	$qq->show('authors');
+	$qq->show('foot');
+	}
+else
+	{
+	if(ctype_digit($server['params'][0]))
+		{
+		$a = Author::fetch($server['params'][0]);
+		if($a !== false)
+			{
+			$author = $a->name();
+			}
+		}
+	else
+		{
+		$author = urldecode($server['params'][0]);
+		$a = Author::search($author);
+		}
+	if($a === false)
+		{
+		$qq->redirect('author');
+		}
+	$qv['thoughts'] = $a->thoughts(LANG);
+	$qv['pagetitle'] = $author;
+	$qq->show('head');
+	$qv['header'] = $author;
+	$qq->show('h2-header');
+	$qq->show('thoughts');
+	$qq->show('foot');
+	}
+
+?>

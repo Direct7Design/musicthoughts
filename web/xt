@@ -1,0 +1,86 @@
+<?php
+require 'auth.php';
+require 'musicthoughts-init.php';
+$qv['css'] = 'plain';
+
+$t = new Thought(intval($server['params'][0]));
+
+if(isset($_POST['action']))
+	{
+	switch($_POST['action'])
+		{
+		case 'KILL-APOLOGIZE':
+			$c = $t->contributor();
+			$r = array_shift($t->translations());
+			$email = $c->email();
+			$subject = 'Sorry from MusicThoughts, but thank you anyway.';
+			$body = "I feel really bad saying this, but I've deleted your MusicThoughts submission.  (copied below, in case you need it)  I just didn't feel it fit with the goals and guidelines of the site. (See this link: http://musicthoughts.com/guidelines for more info.)\n\nSince I pay the translators by the word, each new thought I accept to the site costs me about $20, so I have to be very very picky what I'm willing to spend $20 to add.\n\nI hope you understand, and I hope you aren't discouraged from submitting another one some day if you think it's a good fit.\n\n--\nDerek Sivers http://musicthoughts.com";
+			$body .= "\n\n\n" . $r->thought();
+			$headers = "From: MusicThoughts <musicthoughts@musicthoughts.com>\nReply-To: musicthoughts@musicthoughts.com\nContent-Type: text/plain; charset=utf-8";
+			mail($email, $subject, $body, $headers);
+			$t->kill();
+			$qq->redirect('xl');
+			break;
+		case 'KILL-DUPE':
+			$c = $t->contributor();
+			$r = array_shift($t->translations());
+			$email = $c->email();
+			$subject = 'MusicThoughts: duplicate quote';
+			$body = "I love the quote you submitted (copied below), but another form of it already appears on the site!\n\nThanks for the submission anyway, though!\n\n--\nDerek Sivers http://musicthoughts.com";
+			$body .= "\n\n\n" . $r->thought();
+			$headers = "From: MusicThoughts <musicthoughts@musicthoughts.com>\nReply-To: musicthoughts@musicthoughts.com\nContent-Type: text/plain; charset=utf-8";
+			mail($email, $subject, $body, $headers);
+			$t->kill();
+			$qq->redirect('xl');
+			break;
+		case 'KILL-SPAM':
+			$t->kill();
+			$qq->redirect('xl');
+		case 'KILL-SPAM':
+			$t->kill();
+			$qq->redirect('xl');
+			break;
+		case 'SEND-TO-LANG.PRO':
+			$t->send2langpro();
+			$qq->redirect('xl');
+			break;
+		case 'change_thought':
+			$t->set($_POST);
+			break;
+		case 'change_translation':
+			$r = new ThoughtTranslation(intval($_POST['translation_id']));
+			$r->set($_POST);
+			break;
+		case 'change_categories':
+			$t->delete_categories();
+			$t->add_categories($_POST['category']);
+			break;
+		case 'change_author':
+			$a = new Author(intval($_POST['author_id']));
+			$a->set($_POST);
+			break;
+		case 'change_contributor':
+			$c = new Contributor(intval($_POST['contributor_id']));
+			$c->set($_POST);
+			break;
+		}
+	$qq->redirect('xt/' . $t->id);
+	}
+
+$qv['t'] = $t;
+$qv['translations'] = $t->translations();
+$category_ids = array();
+foreach($t->categories() as $c)
+	{
+	$category_ids[] = $c->id;
+	}
+$qv['categories'] = Category::all();
+$qv['category_ids'] = $category_ids;
+$qv['author'] = $t->author();
+$qv['contributor'] = $t->contributor();
+
+$qv['pagetitle'] = 'MusicThoughts ADMIN';
+$qq->show('head-plain');
+$qq->show('xt-form');
+$qq->show('foot-plain');
+?>

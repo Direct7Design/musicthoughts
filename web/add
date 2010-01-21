@@ -1,0 +1,91 @@
+<?php
+require 'musicthoughts-init.php';
+
+$remember_fields = array('contributor', 'contributor_place', 'contributor_email', 'contributor_url');
+$musicwords = array('music', 'موسيقى', 'Musik', 'música', 'musique', 'musica', '音楽', 'музыка');
+
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+	{
+	# TODO: say whey they're redirected
+	$valid = false;
+	if(isset($_POST['v']) && strlen($_POST['v']))
+		{
+		foreach($musicwords as $mw)
+			{
+			if(stristr($_POST['v'], $mw)) { $valid = true; }
+			}
+		}
+	if(!$valid) { $qq->redirect('add'); }
+	if(!isset($_POST['thought']) || strlen($_POST['thought']) < 10) { $qq->redirect('add'); }
+	if(!isset($_POST['author']) || strlen($_POST['author']) < 2) { $qq->redirect('add'); }
+	if(!isset($_POST['contributor_email']) || !is_valid_email_address($_POST['contributor_email'])) { $qq->redirect('add'); }
+	### CONTRIBUTOR
+	# search Person. add if not found.
+	$p = Person::get_by_email($_POST['contributor_email']);
+	if($p === false)
+		{
+		$shared_id = Person::add2($_POST['contributor_email'], $_POST['contributor']);
+		}
+	else
+		{
+		$shared_id = $p->id;
+		}
+	# search Contributor. add if not found
+	$c = Contributor::fetch_by_email($_POST['contributor_email']);
+	if($c === false)
+		{
+		$c = new Contributor(false);
+		$set = array('shared_id' => $shared_id, 'name' => $_POST['contributor'], 'email' => $_POST['contributor_email'], 'place' => $_POST['contributor_place'], 'url' => $_POST['contributor_url']);
+		$contributor_id = $c->add($set);
+		}
+	else
+		{
+		$contributor_id = $c->id;
+		}
+	# setcookie
+	$expire = time() + (60*60*24*365);
+	foreach($remember_fields as $k)
+		{
+		setcookie($k, $_POST[$k], $expire, '/');
+		}
+
+	### AUTHOR
+	# search Author. add if not found
+	$a = Author::fetch_by_name($_POST['author']);
+	if($a === false)
+		{
+		$a = new Author(false);
+		$set = array('name' => $_POST['author'], 'url' => $_POST['author_url']);
+		$author_id = $a->add($set);
+		}
+	else
+		{
+		$author_id = $a->id;
+		}
+
+	### THOUGHT
+	# on the rare case someone is adding while lang is set by GET method, it will only be marked as such if posted in hidden var
+	$lang = (isset($_POST['lang']) && Lang::valid($_POST['lang'])) ? $_POST['lang'] : LANG;
+	$t = new Thought(false, $lang);
+	$set = array('author_id' => $author_id, 'contributor_id' => $contributor_id, 'source_url' => $_POST['author_source'], 'lang' => $lang, 'thought' => $_POST['thought']);
+	$new_id = $t->add2($set);
+	if(isset($_POST['category']) && is_array($_POST['category']) && count($_POST['category']) > 0)
+		{
+		$t = new Thought(intval($new_id), LANG);
+		$t->add_categories($_POST['category']);
+		}
+	$qq->redirect('add-thanks');
+	}
+
+$qv['pagetitle'] = ADD_THOUGHT;
+$qv['categories'] = Category::all();
+
+foreach($remember_fields as $x)
+	{
+	$qv[$x] = (isset($_COOKIE[$x])) ? $_COOKIE[$x] : '';
+	}
+
+$qq->show('head');
+$qq->show('add-form');
+$qq->show('foot');
+?>
