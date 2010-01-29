@@ -1,5 +1,9 @@
 <?php
-require 'auth.php';
+define('DOMAIN', 'musicthoughts.com');
+$admins = array(1, 59196);
+require_once 'init.php';
+require 'http-auth-admins.php';
+
 require 'musicthoughts-init.php';
 $qv['css'] = 'plain';
 
