@@ -11,7 +11,7 @@ if(isset($server['params'][0]) && ctype_digit($server['params'][0]))
 else
 	{
 	$t = Thought::random1(LANG);
-	$qq->redirect('t/' . $t->id);
+	$qq->redirect('t/' . $t->id, 302);
 	}
 $a = $t->author();
 $c = $t->contributor();
