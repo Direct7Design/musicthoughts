@@ -1,0 +1,13 @@
+<?php
+if($_SERVER['REQUEST_METHOD'] == 'GET' && preg_match('/^\/c\/([A-Za-z0-9]{5})$/', $_SERVER['REQUEST_URI'], $matches))
+	{
+	require 'init.php';
+	$c = CDBabyCustomer::find_by_lopass($matches[1]);
+	if($c !== false)
+		{
+		$p = $c->person();
+		$p->set_welcome_cookie();
+		}
+	}
+header('Location: http://musicthoughts.com/');
+?>

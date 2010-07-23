@@ -169,7 +169,7 @@ class Thought extends MtDB
 		$post .= '&lang=' . $t->lang();
 		$post .= '&original=' . urlencode($t->thought());
 		$post .= '&context_url=' . urlencode('http://musicthoughts.com/t/' . $this->id);
-		$output = shell_exec('curl -s -i -X POST -d "' . $post . '" -u sivers@gmail.com:8uhb7ygv http://lang.pro/original');
+		$output = shell_exec('curl -s -i -X POST -d "' . $post . '" -u user:pass http://lang.pro/original');
 		return true;
 		}
 
