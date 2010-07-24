@@ -7,7 +7,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && preg_match('/^\/c\/([A-Za-z0-9]{5})$/'
 		{
 		$p = $c->person();
 		$p->set_welcome_cookie();
+		UserStat::uid_key_value($p->id, 'musicthoughts', 'interested');
 		}
 	}
-header('Location: http://musicthoughts.com/');
+header('Location: http://' . $_SERVER['HTTP_HOST'] . '/');
 ?>
