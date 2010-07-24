@@ -84,6 +84,14 @@ foreach($remember_fields as $x)
 	{
 	$qv[$x] = (isset($_COOKIE[$x])) ? $_COOKIE[$x] : '';
 	}
+if(isset($_COOKIE['name']) && !strlen($qv['contributor']))
+	{
+	$qv['contributor'] = $_COOKIE['name'];
+	}
+if(isset($_COOKIE['email']) && !strlen($qv['contributor_email']))
+	{
+	$qv['contributor_email'] = $_COOKIE['email'];
+	}
 
 $qq->show('head');
 $qq->show('add-form');
